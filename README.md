@@ -1,84 +1,78 @@
-<div align="center">
-   <img src="images/logo1.png" alt="Logo de InfoHunter">
-</div>
-
-&nbsp;
-
 # 🔎 InfoHunter
 
-InfoHunter es una herramienta de código abierto para la recopilación de información en OSINT, diseñada para proteger la seguridad y privacidad de personas y empresas.
+![InfoHunter Logo](images/logo1.png)
 
-![Licencia](https://img.shields.io/github/license/sweetnight19/InfoHunter)
-[![Estado del Proyecto](https://img.shields.io/badge/Estado-En%20Desarrollo-yellow.svg)](https://github.com/sweetnight19/InfoHunter)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/sweetnight19/infohunter)
-![GitHub all releases](https://img.shields.io/github/downloads/Sweetnight19/InfoHunter/total)
-![GitHub Repo stars](https://img.shields.io/github/stars/sweetnight19/infohunter?style=plastic)
+InfoHunter is an open-source OSINT (Open Source Intelligence) tool designed to gather information, protect the security and privacy of individuals and companies, and help assess potential risks.
+
+[![License](https://img.shields.io/github/license/sweetnight19/InfoHunter)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![Project Status](https://img.shields.io/badge/Status-In%20Development-yellow.svg)](https://github.com/sweetnight19/InfoHunter)
+[![GitHub Release](https://img.shields.io/github/v/release/sweetnight19/InfoHunter)](https://github.com/sweetnight19/InfoHunter/releases)
+[![GitHub Downloads](https://img.shields.io/github/downloads/sweetnight19/InfoHunter/total)](https://github.com/sweetnight19/InfoHunter/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/sweetnight19/InfoHunter?style=plastic)](https://github.com/sweetnight19/InfoHunter/stargazers)
 
 &nbsp;
 
-## 📚 Descripción del proyecto
+## 📚 Project Description
 
-InfoHunter es una herramienta desarrollada en Python que utiliza técnicas de OSINT (Open Source Intelligence) para recopilar información relevante de diversas fuentes en línea. La herramienta se enfoca en identificar y analizar información para crear perfiles completos de las personas o empresas investigadas, así como para identificar posibles riesgos de seguridad o privacidad. Además, proporciona medidas y buenas prácticas para proteger la privacidad y seguridad de los sujetos de interés.
+InfoHunter is a Python-based tool that leverages OSINT techniques to collect relevant information from various online sources. It focuses on identifying and analyzing data to build comprehensive profiles of individuals or companies, and to detect potential security or privacy risks. Additionally, it offers suggestions and best practices to enhance the security and privacy of the subjects of interest.
 
-## 🚀 Funcionalidades principales
+## 🚀 Key Features
 
-- Recopilación de información de fuentes en línea.
-- Análisis de la información para crear perfiles completos.
-- Identificación y evaluación de riesgos de seguridad o privacidad.
-- Medidas y buenas prácticas para proteger la privacidad y seguridad.
-- Evaluación de la eficacia de las medidas implementadas.
+* **Information Gathering:** Collects data from diverse online sources.
+* **Profile Creation:** Analyzes gathered data to create detailed profiles of individuals or companies.
+* **Risk Assessment:** Identifies and evaluates potential security and privacy risks.
+* **Security Measures:** Provides measures and good practices to improve security and privacy.
+* **Effectiveness Evaluation:** Assesses the effectiveness of the implemented security measures.
 
-## 🔧 Instalación
+## 🔧 Installation
 
-1. Clona el repositorio de GitHub:
+1. Clone the GitHub repository:
 
-   ```bash
-   git clone https://github.com/sweetnight19/InfoHunter.git
+    ```bash
+    git clone https://github.com/sweetnight19/InfoHunter.git
+    ```
 
-   ```
+2. Install the dependencies:
 
-2. Instala las dependencias:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 📖 Usage
 
-## 📖 Uso
+1. Run the `InfoHunter.py` script:
 
-1. Ejecuta el archivo InfoHunter.py:
+    ```bash
+    python InfoHunter.py
+    ```
 
-   ```bash
-   python InfoHunter.py
-
-   ```
-
-2. Sigue las instrucciones en la interfaz de línea de comandos para utilizar las funcionalidades de InfoHunter.
+2. Follow the instructions in the command-line interface to utilize InfoHunter's features.
 
 ## 🗺️ Roadmap
 
-A continuación se muestra el plan de desarrollo para el proyecto:
+The project development plan includes:
 
-- [x] Implementación de la búsqueda de información en fuentes abiertas.
-- [x] Análisis de datos recopilados para crear perfiles de personas y empresas.
-- [x] Identificación de posibles riesgos de seguridad y privacidad.
-- [x] Establecimiento de medidas para proteger la privacidad y seguridad.
-- [x] Evaluación de la eficacia de las medidas implementadas.
+* [x] Implementation of information gathering from open sources.
+* [x] Analysis of collected data to create profiles of people and companies.
+* [x] Identification of potential security and privacy risks.
+* [x] Establishment of measures to protect privacy and security.
+* [x] Evaluation of the effectiveness of the implemented measures.
 
-## 👤 Autor
+## 👤 Author
 
-- Sweetnight19
-- Email: sweetnight19@protonmail.com
-- GitHub: [@sweetnight19](https://github.com/sweetnight19)
+* Sweet-night
+* Email: [sweetnight19@protonmail.com](mailto:sweetnight19@protonmail.com)
+* GitHub: [@Sweet-night](https://github.com/sweetnight19)
 
-## 🤝 Contribuciones
+## 🤝 Contributions
 
-Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, sigue los siguientes pasos:
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama para tu contribución.
-3. Realiza tus modificaciones y mejoras.
-4. Envía un pull request.
+1. Fork the repository.
+2. Create a new branch for your contribution.
+3. Make your changes and improvements.
+4. Submit a pull request.
 
-## 📜 Licencia
+## 📜 License
 
-Este proyecto está licenciado bajo la [Licencia GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This project is licensed under the [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html).
