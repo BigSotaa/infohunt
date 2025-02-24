@@ -35,9 +35,10 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt && \
     pip install playwright==1.49.1 && \
-    playwright install && \
-    rm /tmp/requirements.txt
+    playwright install 
+RUN rm /tmp/requirements.txt
 # Install theHarvester
 RUN pip install --no-cache-dir git+https://github.com/laramies/theHarvester.git
+
 # Set the entrypoint
 ENTRYPOINT ["theHarvester"]
