@@ -1,0 +1,14 @@
+{
+    "example_service": {
+        "url_user": "https://example.com/andrewbulthuis",
+        "username": "andrewbulthuis",
+        "status": "found",
+        "additional_info": "Some additional information"
+    },
+    "another_service": {
+        "url_user": "https://another.com/andrewbulthuis",
+        "username": "andrewbulthuis",
+        "status": "found",
+        "additional_info": "Some additional information"
+    }
+}

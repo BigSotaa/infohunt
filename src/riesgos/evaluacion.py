@@ -24,16 +24,17 @@ def generar_evaluacion_y_recomendaciones(data,similar_web_api_key):
     
     # Definir recomendaciones basadas en la evaluación
     recomendaciones_data_leak = [
-        {"recomendacion": "Cambie inmediatamente la contraseña de la cuenta afectada.", "impacto": "Alto"},
-        {"recomendacion": "Habilite la autenticación de dos factores (2FA) para mejorar la seguridad de su cuenta.", "impacto": "Medio"},
-        {"recomendacion": "Revise todas sus cuentas en busca de contraseñas reutilizadas y cámbielas.", "impacto": "Alto"},
-        {"recomendacion": "Monitoree sus cuentas bancarias y financieras en busca de actividad no autorizada.", "impacto": "Alto"},
-        {"recomendacion": "Sea escéptico ante los correos electrónicos o mensajes sospechosos y evite hacer clic en enlaces no verificados.", "impacto": "Medio"},
-        {"recomendacion": "Informe a las autoridades pertinentes y a las plataformas en caso de fraude o robo de identidad.", "impacto": "Alto"},
-        {"recomendacion": "Utilice una solución de gestión de contraseñas para crear y almacenar contraseñas seguras.", "impacto": "Medio"},
-        {"recomendacion": "Mantenga sus sistemas y software actualizados para protegerse contra vulnerabilidades conocidas.", "impacto": "Alto"},
-        {"recomendacion": "Revise la configuración de privacidad de sus cuentas en línea y limpie la información personal innecesaria.", "impacto": "Medio"},
-        {"recomendacion": "Eduque a sus contactos sobre las amenazas en línea y promueva prácticas seguras.", "impacto": "Bajo"},
+        {"recomendacion": "Change the password of the affected account immediately.", "impacto": "High"},
+        {"recomendacion": "Enable two-factor authentication (2FA) to improve the security of your account.", "impacto": "Medium"},
+        {"recomendacion": "Check all your accounts for reused passwords and change them.", "impacto": "High"},
+        {"recomendacion": "Monitor your bank and financial accounts for unauthorized activity.", "impacto": "High"},
+        {"recomendacion": "Be skeptical of suspicious emails or messages and avoid clicking on unverified links.", "impacto": "Medium"},
+        {"recomendacion": "Report to the relevant authorities and platforms in case of fraud or identity theft.", "impacto": "High"},
+        {"recomendacion": "Use a password management solution to create and store secure passwords.", "impacto": "Medium"},
+        {"recomendacion": "Keep your systems and software updated to protect against known vulnerabilities.", "impacto": "High"},
+        {"recomendacion": "Review the privacy settings of your online accounts and clear unnecessary personal information.", "impacto": "Medium"},
+        {"recomendacion": "Educate your contacts about online threats and promote safe practices.", "impacto": "Low"},
+
     ]
 
     for entry in data:
@@ -61,55 +62,63 @@ def generar_evaluacion_y_recomendaciones(data,similar_web_api_key):
     return evaluacion
 
 def asignar_nivel_criticidad(alexa_rank):
+    if alexa_rank is None:
+        return 'Unknown'  # Or any other default you want to return
     if alexa_rank < 1000:
-        return 'Crítico'
+        return 'Critical'  # Changed to English
     elif alexa_rank < 10000:
-        return 'Alto'
+        return 'High'  # Changed to English
     elif alexa_rank < 100000:
-        return 'Medio'
+        return 'Medium'  # Changed to English
     else:
-        return 'Bajo'
+        return 'Low'  # Changed to English
+
     
 def identificar_riesgos_username(username: str):
     # Leer los datos de redes sociales del archivo JSON
     file_path = f"output/report_{username}_simple.json"
     with open(file_path, "r") as file:
         datos_redes_sociales = json.load(file)
-        
+
     # Crear una variable para almacenar los datos importantes
     datos_importantes = {}
 
     # Lista de recomendaciones para nivel crítico medio
     recomendaciones_medio = [
-        {"recomendacion": "Revise cuidadosamente su configuración de privacidad y ajuste la visibilidad de su perfil y publicaciones según sea necesario.", "impacto": "Bajo"},
-        {"recomendacion": "Sea cauteloso al aceptar solicitudes de amistad o seguir a personas desconocidas.", "impacto": "Medio"},
-        {"recomendacion": "Regularmente revise su actividad y ajuste la configuración de notificaciones para mantener un mayor control sobre su cuenta.", "impacto": "Alto"},
-        {"recomendacion": "Evite compartir datos personales o sensibles en sus publicaciones.", "impacto": "Medio"},
-        {"recomendacion": "Use autenticación de dos factores (2FA) si está disponible para mejorar la seguridad de su cuenta.", "impacto": "Alto"},
-        {"recomendacion": "Mantenga sus contraseñas seguras y cambie regularmente las contraseñas de sus cuentas.", "impacto": "Alto"},
-        {"recomendacion": "Desactive las ubicaciones geográficas en sus publicaciones para proteger su privacidad.", "impacto": "Medio"},
-        {"recomendacion": "No comparta información confidencial, como números de teléfono o direcciones, en su perfil público.", "impacto": "Medio"},
-        {"recomendacion": "Sea escéptico ante las ofertas o enlaces sospechosos que reciba a través de mensajes directos.", "impacto": "Medio"},
-        {"recomendacion": "Revise periódicamente las aplicaciones y servicios vinculados a su cuenta y elimine los que ya no usa o confía.", "impacto": "Bajo"},
-        {"recomendacion": "Informe de inmediato cualquier actividad o cuenta sospechosa a la plataforma de redes sociales.", "impacto": "Alto"},
-        {"recomendacion": "No revele su ubicación en tiempo real a través de las redes sociales, especialmente si está fuera de casa.", "impacto": "Medio"},
-        {"recomendacion": "Tenga cuidado con las aplicaciones de terceros y asegúrese de que tengan buenas calificaciones y reseñas antes de autorizarlas.", "impacto": "Medio"},
+        {"recomendacion": "Review your privacy settings carefully and adjust the visibility of your profile and posts as necessary.", "impacto": "Low"},
+        {"recomendacion": "Be cautious when accepting friend requests or following unknown people.", "impacto": "Medium"},
+        {"recomendacion": "Regularly review your activity and adjust notification settings to maintain greater control over your account.", "impacto": "High"},
+        {"recomendacion": "Avoid sharing personal or sensitive data in your posts.", "impacto": "Medium"},
+        {"recomendacion": "Use two-factor authentication (2FA) if available to improve the security of your account.", "impacto": "High"},
+        {"recomendacion": "Keep your passwords secure and regularly change the passwords of your accounts.", "impacto": "High"},
+        {"recomendacion": "Disable geographic locations in your posts to protect your privacy.", "impacto": "Medium"},
+        {"recomendacion": "Do not share confidential information, such as phone numbers or addresses, in your public profile.", "impacto": "Medium"},
+        {"recomendacion": "Be skeptical of suspicious offers or links you receive through direct messages.", "impacto": "Medium"},
+        {"recomendacion": "Periodically review the applications and services linked to your account and remove those you no longer use or trust.", "impacto": "Low"},
+        {"recomendacion": "Immediately report any suspicious activity or account to the social media platform.", "impacto": "High"},
+        {"recomendacion": "Do not reveal your real-time location through social media, especially if you are away from home.", "impacto": "Medium"},
+        {"recomendacion": "Be careful with third-party applications and make sure they have good ratings and reviews before authorizing them.", "impacto": "Medium"},
     ]
 
     # Extraer los datos importantes y almacenarlos en la variable
     for red_social, detalles in datos_redes_sociales.items():
-        alexa_rank = detalles['site']['alexaRank']
+        # Check if 'site' key exists in 'detalles'
+        if 'site' in detalles and 'alexaRank' in detalles['site']:
+            alexa_rank = detalles['site']['alexaRank']
+        else:
+            alexa_rank = None  # or some default value
+
         nivel_criticidad = asignar_nivel_criticidad(alexa_rank)
-        
+
         datos_importantes[red_social] = {
             "status": detalles["status"],
             "url_user": detalles["url_user"],
-            "nivel_critico": nivel_criticidad,
-            "recomendaciones":random.sample(recomendaciones_medio, 2)
+            "critical_level": nivel_criticidad,
+            "recommendations":random.sample(recomendaciones_medio, 2)
         }
-    
+
     #Debug    
     #print(datos_importantes)
-    
+
     return datos_importantes
-        
+
