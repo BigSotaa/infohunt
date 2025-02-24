@@ -1,8 +1,43 @@
 FROM alpine:3
+
 LABEL maintainer="@jay_townsend1 & @NotoriousRebel1"
-RUN apk update && apk upgrade --available && apk add --no-cache musl-dev git libffi-dev gcc python3-dev pipx libxml2-dev libxslt-dev bash
-RUN mkdir -p "~/.local/share/theHarvester/static/"
-RUN pipx install git+https://github.com/laramies/theHarvester.git
-RUN pipx ensurepath
-ENTRYPOINT ["/root/.local/bin/restfulHarvest", "-H", "0.0.0.0", "-p", "80"]
-EXPOSE 80
+
+# Install dependencies
+RUN apk update && apk upgrade --available && apk add --no-cache \
+    musl-dev \
+    git \
+    libffi-dev \
+    gcc \
+    python3-dev \
+    py3-pip \
+    libxml2-dev \
+    libxslt-dev \
+    bash
+
+# Install playwright dependencies
+RUN apk add --no-cache \
+    nss \
+    chromium \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont
+
+# Create necessary directories
+RUN mkdir -p /root/.local/share/theHarvester/static/
+
+# Create a virtual environment
+RUN python3 -m venv /opt/venv
+
+# Activate the virtual environment (in the current RUN command, it will be deactivated afterwards)
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Install packages within the virtual environment
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt && \
+    pip install playwright==1.49.1 && \
+    playwright install && \
+    rm /tmp/requirements.txt
+# Install theHarvester
+RUN pip install --no-cache-dir git+https://github.com/laramies/theHarvester.git
+# Set the entrypoint
+ENTRYPOINT ["theHarvester"]
