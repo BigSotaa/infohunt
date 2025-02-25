@@ -7,10 +7,11 @@ services:
       - ./api-keys.yaml:/etc/theHarvester/api-keys.yaml
       - ./proxies.yaml:/etc/theHarvester/proxies.yaml
       - ./proxies.yaml:/root/.theHarvester/proxies.yaml
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - REQUIREMENTS_FILE=requirements.txt
+        - BASE_REQUIREMENTS_FILE=requirements/base.txt
     ports:
-      - "8080:80"
-
-networks:
-  default:
-    name: app_theHarvester_network
+      - "80:80"
